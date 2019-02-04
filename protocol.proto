@@ -15,10 +15,11 @@ message Connection {
 
 message Cell {
   uint64 id = 1;
-  Vector pos = 2;
-  Vector vel = 3;
-  bytes dna = 4;
-  repeated Connection connections = 5;
+  uint64 energy_level = 2;
+  Vector pos = 3;
+  Vector vel = 4;
+  bytes dna = 5;
+  repeated Connection connections = 6;
 }
 
 message CellComputeBatch {
