@@ -15,8 +15,9 @@ RUN git clone -b 'v3.5.1' --single-branch --depth 1 https://github.com/google/pr
     rm -r protobuf
 
 # Get the source from GitHub
-RUN go get google.golang.org/grpc
 # Install protoc-gen-go
-RUN go get github.com/golang/protobuf/protoc-gen-go
-RUN protoc --version
+WORKDIR /go/src/github.com/codeuniversity/al-proto
+COPY go.mod .
+RUN GO111MODULE=on go get google.golang.org/grpc
+RUN GO111MODULE=on go get github.com/golang/protobuf/protoc-gen-go@v1.2.0
 ENTRYPOINT [ "/usr/local/bin/protoc", "--go_out=plugins=grpc:.", "protocol.proto" ]
