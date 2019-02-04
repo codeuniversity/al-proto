@@ -27,6 +27,9 @@ message CellComputeBatch {
   repeated Cell cells_in_proximity = 3;
 }
 
+message BigBangRequest {}
+
 service CellInteractionService {
   rpc ComputeCellInteractions(CellComputeBatch) returns (CellComputeBatch);
+  rpc BigBang(BigBangRequest) returns (stream Cell);
 }
