@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package proto;
+
+message Vector {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message Connection {
+  uint64 connected_to = 1;
+  Vector direction = 2;
+}
+
+message Cell {
+  uint64 id = 1;
+  Vector pos = 2;
+  Vector vel = 3;
+  bytes dna = 4;
+  repeated Connection connections = 5;
+}
+
+message CellComputeBatch {
+  uint64 time_step = 1;
+  repeated Cell cells_to_compute = 2;
+  repeated Cell cells_in_proximity = 3;
+}
+
+service CellInteractionService {
+  rpc ComputeCellInteractions(stream CellComputeBatch) returns (stream CellComputeBatch);
+}
