@@ -28,5 +28,5 @@ message CellComputeBatch {
 }
 
 service CellInteractionService {
-  rpc ComputeCellInteractions(stream CellComputeBatch) returns (stream CellComputeBatch);
+  rpc ComputeCellInteractions(CellComputeBatch) returns (CellComputeBatch);
 }
