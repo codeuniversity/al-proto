@@ -10,7 +10,6 @@ message Vector {
 
 message Connection {
   uint64 connected_to = 1;
-  Vector direction = 2;
 }
 
 message Cell {
@@ -33,4 +32,15 @@ message BigBangRequest {}
 service CellInteractionService {
   rpc ComputeCellInteractions(CellComputeBatch) returns (CellComputeBatch);
   rpc BigBang(BigBangRequest) returns (stream Cell);
+}
+
+message SlaveRegistration {
+  string address = 1;
+  uint32 threads = 2;
+}
+
+message SlaveRegistrationResponse {}
+
+service SlaveRegistrationService {
+  rpc Register(SlaveRegistration) returns (SlaveRegistrationResponse);
 }
