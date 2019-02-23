@@ -9,7 +9,7 @@ message Vector {
 }
 
 message Connection {
-  uint64 connected_to = 1;
+  string connected_to = 1;
 }
 
 message Cell {
