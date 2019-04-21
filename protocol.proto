@@ -25,6 +25,7 @@ message CellComputeBatch {
   uint64 time_step = 1;
   repeated Cell cells_to_compute = 2;
   repeated Cell cells_in_proximity = 3;
+  string batch_key = 4;
 }
 
 message SpawnDimension {
@@ -43,8 +44,6 @@ message BigBangRequest {
   uint64 cell_amount = 3;
   DnaLengthRange dna_length_range = 4;
 }
-
-
 
 service CellInteractionService {
   rpc ComputeCellInteractions(CellComputeBatch) returns (CellComputeBatch);
