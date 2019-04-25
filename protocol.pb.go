@@ -3,13 +3,12 @@
 
 package proto
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
-
 import (
-	context "golang.org/x/net/context"
+	context "context"
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
+	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -21,7 +20,7 @@ var _ = math.Inf
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
-const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
+const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 type Vector struct {
 	X                    float32  `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
@@ -36,16 +35,17 @@ func (m *Vector) Reset()         { *m = Vector{} }
 func (m *Vector) String() string { return proto.CompactTextString(m) }
 func (*Vector) ProtoMessage()    {}
 func (*Vector) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{0}
+	return fileDescriptor_2bc2336598a3f7e0, []int{0}
 }
+
 func (m *Vector) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Vector.Unmarshal(m, b)
 }
 func (m *Vector) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Vector.Marshal(b, m, deterministic)
 }
-func (dst *Vector) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Vector.Merge(dst, src)
+func (m *Vector) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Vector.Merge(m, src)
 }
 func (m *Vector) XXX_Size() int {
 	return xxx_messageInfo_Vector.Size(m)
@@ -88,16 +88,17 @@ func (m *Connection) Reset()         { *m = Connection{} }
 func (m *Connection) String() string { return proto.CompactTextString(m) }
 func (*Connection) ProtoMessage()    {}
 func (*Connection) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{1}
+	return fileDescriptor_2bc2336598a3f7e0, []int{1}
 }
+
 func (m *Connection) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Connection.Unmarshal(m, b)
 }
 func (m *Connection) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Connection.Marshal(b, m, deterministic)
 }
-func (dst *Connection) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Connection.Merge(dst, src)
+func (m *Connection) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Connection.Merge(m, src)
 }
 func (m *Connection) XXX_Size() int {
 	return xxx_messageInfo_Connection.Size(m)
@@ -131,16 +132,17 @@ func (m *Cell) Reset()         { *m = Cell{} }
 func (m *Cell) String() string { return proto.CompactTextString(m) }
 func (*Cell) ProtoMessage()    {}
 func (*Cell) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{2}
+	return fileDescriptor_2bc2336598a3f7e0, []int{2}
 }
+
 func (m *Cell) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Cell.Unmarshal(m, b)
 }
 func (m *Cell) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Cell.Marshal(b, m, deterministic)
 }
-func (dst *Cell) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Cell.Merge(dst, src)
+func (m *Cell) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Cell.Merge(m, src)
 }
 func (m *Cell) XXX_Size() int {
 	return xxx_messageInfo_Cell.Size(m)
@@ -207,16 +209,17 @@ func (m *CellComputeBatch) Reset()         { *m = CellComputeBatch{} }
 func (m *CellComputeBatch) String() string { return proto.CompactTextString(m) }
 func (*CellComputeBatch) ProtoMessage()    {}
 func (*CellComputeBatch) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{3}
+	return fileDescriptor_2bc2336598a3f7e0, []int{3}
 }
+
 func (m *CellComputeBatch) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CellComputeBatch.Unmarshal(m, b)
 }
 func (m *CellComputeBatch) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CellComputeBatch.Marshal(b, m, deterministic)
 }
-func (dst *CellComputeBatch) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CellComputeBatch.Merge(dst, src)
+func (m *CellComputeBatch) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CellComputeBatch.Merge(m, src)
 }
 func (m *CellComputeBatch) XXX_Size() int {
 	return xxx_messageInfo_CellComputeBatch.Size(m)
@@ -267,16 +270,17 @@ func (m *SpawnDimension) Reset()         { *m = SpawnDimension{} }
 func (m *SpawnDimension) String() string { return proto.CompactTextString(m) }
 func (*SpawnDimension) ProtoMessage()    {}
 func (*SpawnDimension) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{4}
+	return fileDescriptor_2bc2336598a3f7e0, []int{4}
 }
+
 func (m *SpawnDimension) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SpawnDimension.Unmarshal(m, b)
 }
 func (m *SpawnDimension) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SpawnDimension.Marshal(b, m, deterministic)
 }
-func (dst *SpawnDimension) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SpawnDimension.Merge(dst, src)
+func (m *SpawnDimension) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SpawnDimension.Merge(m, src)
 }
 func (m *SpawnDimension) XXX_Size() int {
 	return xxx_messageInfo_SpawnDimension.Size(m)
@@ -313,16 +317,17 @@ func (m *DnaLengthRange) Reset()         { *m = DnaLengthRange{} }
 func (m *DnaLengthRange) String() string { return proto.CompactTextString(m) }
 func (*DnaLengthRange) ProtoMessage()    {}
 func (*DnaLengthRange) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{5}
+	return fileDescriptor_2bc2336598a3f7e0, []int{5}
 }
+
 func (m *DnaLengthRange) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DnaLengthRange.Unmarshal(m, b)
 }
 func (m *DnaLengthRange) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DnaLengthRange.Marshal(b, m, deterministic)
 }
-func (dst *DnaLengthRange) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DnaLengthRange.Merge(dst, src)
+func (m *DnaLengthRange) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DnaLengthRange.Merge(m, src)
 }
 func (m *DnaLengthRange) XXX_Size() int {
 	return xxx_messageInfo_DnaLengthRange.Size(m)
@@ -361,16 +366,17 @@ func (m *BigBangRequest) Reset()         { *m = BigBangRequest{} }
 func (m *BigBangRequest) String() string { return proto.CompactTextString(m) }
 func (*BigBangRequest) ProtoMessage()    {}
 func (*BigBangRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{6}
+	return fileDescriptor_2bc2336598a3f7e0, []int{6}
 }
+
 func (m *BigBangRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BigBangRequest.Unmarshal(m, b)
 }
 func (m *BigBangRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BigBangRequest.Marshal(b, m, deterministic)
 }
-func (dst *BigBangRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BigBangRequest.Merge(dst, src)
+func (m *BigBangRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BigBangRequest.Merge(m, src)
 }
 func (m *BigBangRequest) XXX_Size() int {
 	return xxx_messageInfo_BigBangRequest.Size(m)
@@ -421,16 +427,17 @@ func (m *SlaveRegistration) Reset()         { *m = SlaveRegistration{} }
 func (m *SlaveRegistration) String() string { return proto.CompactTextString(m) }
 func (*SlaveRegistration) ProtoMessage()    {}
 func (*SlaveRegistration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{7}
+	return fileDescriptor_2bc2336598a3f7e0, []int{7}
 }
+
 func (m *SlaveRegistration) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SlaveRegistration.Unmarshal(m, b)
 }
 func (m *SlaveRegistration) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SlaveRegistration.Marshal(b, m, deterministic)
 }
-func (dst *SlaveRegistration) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SlaveRegistration.Merge(dst, src)
+func (m *SlaveRegistration) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SlaveRegistration.Merge(m, src)
 }
 func (m *SlaveRegistration) XXX_Size() int {
 	return xxx_messageInfo_SlaveRegistration.Size(m)
@@ -455,35 +462,177 @@ func (m *SlaveRegistration) GetThreads() uint32 {
 	return 0
 }
 
-type SlaveRegistrationResponse struct {
+type SubMasterRegistration struct {
+	Address              string   `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *SlaveRegistrationResponse) Reset()         { *m = SlaveRegistrationResponse{} }
-func (m *SlaveRegistrationResponse) String() string { return proto.CompactTextString(m) }
-func (*SlaveRegistrationResponse) ProtoMessage()    {}
-func (*SlaveRegistrationResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6fd95a7833d73444, []int{8}
-}
-func (m *SlaveRegistrationResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_SlaveRegistrationResponse.Unmarshal(m, b)
-}
-func (m *SlaveRegistrationResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_SlaveRegistrationResponse.Marshal(b, m, deterministic)
-}
-func (dst *SlaveRegistrationResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SlaveRegistrationResponse.Merge(dst, src)
-}
-func (m *SlaveRegistrationResponse) XXX_Size() int {
-	return xxx_messageInfo_SlaveRegistrationResponse.Size(m)
-}
-func (m *SlaveRegistrationResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_SlaveRegistrationResponse.DiscardUnknown(m)
+func (m *SubMasterRegistration) Reset()         { *m = SubMasterRegistration{} }
+func (m *SubMasterRegistration) String() string { return proto.CompactTextString(m) }
+func (*SubMasterRegistration) ProtoMessage()    {}
+func (*SubMasterRegistration) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2bc2336598a3f7e0, []int{8}
 }
 
-var xxx_messageInfo_SlaveRegistrationResponse proto.InternalMessageInfo
+func (m *SubMasterRegistration) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SubMasterRegistration.Unmarshal(m, b)
+}
+func (m *SubMasterRegistration) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SubMasterRegistration.Marshal(b, m, deterministic)
+}
+func (m *SubMasterRegistration) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SubMasterRegistration.Merge(m, src)
+}
+func (m *SubMasterRegistration) XXX_Size() int {
+	return xxx_messageInfo_SubMasterRegistration.Size(m)
+}
+func (m *SubMasterRegistration) XXX_DiscardUnknown() {
+	xxx_messageInfo_SubMasterRegistration.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SubMasterRegistration proto.InternalMessageInfo
+
+func (m *SubMasterRegistration) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+type SubMasterInitialization struct {
+	CellsToTransfer          []*Cell  `protobuf:"bytes,1,rep,name=cells_to_transfer,json=cellsToTransfer,proto3" json:"cells_to_transfer,omitempty"`
+	CellsInProximity         []*Cell  `protobuf:"bytes,2,rep,name=cells_in_proximity,json=cellsInProximity,proto3" json:"cells_in_proximity,omitempty"`
+	XAxisResponsibilityStart float32  `protobuf:"fixed32,3,opt,name=XAxisResponsibilityStart,json=xAxisResponsibilityStart,proto3" json:"XAxisResponsibilityStart,omitempty"`
+	BucketWidth              int32    `protobuf:"varint,4,opt,name=bucketWidth,proto3" json:"bucketWidth,omitempty"`
+	XXX_NoUnkeyedLiteral     struct{} `json:"-"`
+	XXX_unrecognized         []byte   `json:"-"`
+	XXX_sizecache            int32    `json:"-"`
+}
+
+func (m *SubMasterInitialization) Reset()         { *m = SubMasterInitialization{} }
+func (m *SubMasterInitialization) String() string { return proto.CompactTextString(m) }
+func (*SubMasterInitialization) ProtoMessage()    {}
+func (*SubMasterInitialization) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2bc2336598a3f7e0, []int{9}
+}
+
+func (m *SubMasterInitialization) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SubMasterInitialization.Unmarshal(m, b)
+}
+func (m *SubMasterInitialization) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SubMasterInitialization.Marshal(b, m, deterministic)
+}
+func (m *SubMasterInitialization) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SubMasterInitialization.Merge(m, src)
+}
+func (m *SubMasterInitialization) XXX_Size() int {
+	return xxx_messageInfo_SubMasterInitialization.Size(m)
+}
+func (m *SubMasterInitialization) XXX_DiscardUnknown() {
+	xxx_messageInfo_SubMasterInitialization.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SubMasterInitialization proto.InternalMessageInfo
+
+func (m *SubMasterInitialization) GetCellsToTransfer() []*Cell {
+	if m != nil {
+		return m.CellsToTransfer
+	}
+	return nil
+}
+
+func (m *SubMasterInitialization) GetCellsInProximity() []*Cell {
+	if m != nil {
+		return m.CellsInProximity
+	}
+	return nil
+}
+
+func (m *SubMasterInitialization) GetXAxisResponsibilityStart() float32 {
+	if m != nil {
+		return m.XAxisResponsibilityStart
+	}
+	return 0
+}
+
+func (m *SubMasterInitialization) GetBucketWidth() int32 {
+	if m != nil {
+		return m.BucketWidth
+	}
+	return 0
+}
+
+type CellTransfer struct {
+	CellsToTransfer      []*Cell  `protobuf:"bytes,1,rep,name=cells_to_transfer,json=cellsToTransfer,proto3" json:"cells_to_transfer,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CellTransfer) Reset()         { *m = CellTransfer{} }
+func (m *CellTransfer) String() string { return proto.CompactTextString(m) }
+func (*CellTransfer) ProtoMessage()    {}
+func (*CellTransfer) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2bc2336598a3f7e0, []int{10}
+}
+
+func (m *CellTransfer) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CellTransfer.Unmarshal(m, b)
+}
+func (m *CellTransfer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CellTransfer.Marshal(b, m, deterministic)
+}
+func (m *CellTransfer) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CellTransfer.Merge(m, src)
+}
+func (m *CellTransfer) XXX_Size() int {
+	return xxx_messageInfo_CellTransfer.Size(m)
+}
+func (m *CellTransfer) XXX_DiscardUnknown() {
+	xxx_messageInfo_CellTransfer.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CellTransfer proto.InternalMessageInfo
+
+func (m *CellTransfer) GetCellsToTransfer() []*Cell {
+	if m != nil {
+		return m.CellsToTransfer
+	}
+	return nil
+}
+
+type Empty struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Empty) Reset()         { *m = Empty{} }
+func (m *Empty) String() string { return proto.CompactTextString(m) }
+func (*Empty) ProtoMessage()    {}
+func (*Empty) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2bc2336598a3f7e0, []int{11}
+}
+
+func (m *Empty) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Empty.Unmarshal(m, b)
+}
+func (m *Empty) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Empty.Marshal(b, m, deterministic)
+}
+func (m *Empty) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Empty.Merge(m, src)
+}
+func (m *Empty) XXX_Size() int {
+	return xxx_messageInfo_Empty.Size(m)
+}
+func (m *Empty) XXX_DiscardUnknown() {
+	xxx_messageInfo_Empty.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Empty proto.InternalMessageInfo
 
 func init() {
 	proto.RegisterType((*Vector)(nil), "proto.Vector")
@@ -494,7 +643,69 @@ func init() {
 	proto.RegisterType((*DnaLengthRange)(nil), "proto.DnaLengthRange")
 	proto.RegisterType((*BigBangRequest)(nil), "proto.BigBangRequest")
 	proto.RegisterType((*SlaveRegistration)(nil), "proto.SlaveRegistration")
-	proto.RegisterType((*SlaveRegistrationResponse)(nil), "proto.SlaveRegistrationResponse")
+	proto.RegisterType((*SubMasterRegistration)(nil), "proto.SubMasterRegistration")
+	proto.RegisterType((*SubMasterInitialization)(nil), "proto.SubMasterInitialization")
+	proto.RegisterType((*CellTransfer)(nil), "proto.CellTransfer")
+	proto.RegisterType((*Empty)(nil), "proto.Empty")
+}
+
+func init() { proto.RegisterFile("protocol.proto", fileDescriptor_2bc2336598a3f7e0) }
+
+var fileDescriptor_2bc2336598a3f7e0 = []byte{
+	// 834 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0xcd, 0x6e, 0xdb, 0x46,
+	0x10, 0x06, 0xf5, 0xe3, 0x9f, 0x91, 0xc2, 0x58, 0x6b, 0x24, 0x26, 0xdc, 0xa0, 0x75, 0xd9, 0x8b,
+	0x4f, 0x71, 0xa3, 0xb4, 0x28, 0xda, 0x02, 0x0d, 0x62, 0xb9, 0x30, 0x8c, 0xa4, 0x3f, 0x58, 0xb9,
+	0x69, 0x6f, 0xc4, 0x8a, 0x9c, 0x48, 0x8b, 0x90, 0xbb, 0x2c, 0x77, 0xe5, 0x8a, 0x7e, 0x90, 0x3e,
+	0x4e, 0x0f, 0xbd, 0xf6, 0xdc, 0xa7, 0xe8, 0x4b, 0x14, 0xbb, 0x4b, 0x2a, 0xa2, 0x64, 0x03, 0x42,
+	0x4e, 0xdc, 0x99, 0xfd, 0x66, 0xe6, 0x9b, 0x99, 0x6f, 0x09, 0x7e, 0x5e, 0x48, 0x2d, 0x63, 0x99,
+	0x3e, 0xb5, 0x07, 0xd2, 0xb5, 0x9f, 0x70, 0x08, 0x3b, 0x6f, 0x30, 0xd6, 0xb2, 0x20, 0x7d, 0xf0,
+	0x16, 0x81, 0x77, 0xe2, 0x9d, 0xb6, 0xa8, 0xb7, 0x30, 0x56, 0x19, 0xb4, 0x9c, 0x55, 0x1a, 0xeb,
+	0x36, 0x68, 0x3b, 0xeb, 0x36, 0x3c, 0x03, 0x18, 0x49, 0x21, 0x30, 0xd6, 0x5c, 0x0a, 0xf2, 0x29,
+	0xf4, 0x63, 0x67, 0x61, 0x12, 0x69, 0x69, 0x53, 0xec, 0xd3, 0xde, 0xd2, 0x77, 0x2d, 0xc3, 0xbf,
+	0x3d, 0xe8, 0x8c, 0x30, 0x4d, 0x89, 0x0f, 0x2d, 0x9e, 0x54, 0x88, 0x16, 0x4f, 0x4c, 0x2c, 0x0a,
+	0x2c, 0xa6, 0x65, 0x94, 0xe2, 0x0d, 0xa6, 0xb6, 0x60, 0x87, 0xf6, 0x9c, 0xef, 0xb5, 0x71, 0x91,
+	0x4f, 0xa0, 0x9d, 0x4b, 0x65, 0x8b, 0xf7, 0x86, 0x0f, 0x1c, 0xf9, 0xa7, 0x8e, 0x32, 0x35, 0x37,
+	0x06, 0x60, 0x42, 0x3b, 0x77, 0x02, 0x4c, 0x86, 0x03, 0x68, 0x27, 0x82, 0x05, 0xdd, 0x13, 0xef,
+	0xb4, 0x4f, 0xcd, 0x91, 0x3c, 0x87, 0x9a, 0x1e, 0x97, 0x42, 0x05, 0x3b, 0x27, 0xed, 0xd3, 0xde,
+	0x70, 0x50, 0x85, 0xbe, 0x6f, 0x8d, 0xae, 0xa2, 0xc2, 0xbf, 0x3c, 0x38, 0x30, 0x4d, 0x8c, 0x64,
+	0x96, 0xcf, 0x35, 0x9e, 0x33, 0x1d, 0xcf, 0xc8, 0x47, 0xb0, 0xaf, 0x79, 0x86, 0x91, 0xd2, 0x98,
+	0xdb, 0xbe, 0x3a, 0x74, 0xcf, 0x38, 0xc6, 0x1a, 0x73, 0xf2, 0x25, 0x1c, 0xc4, 0x98, 0xa6, 0x2a,
+	0xd2, 0x32, 0x8a, 0x5d, 0x54, 0xd0, 0xb2, 0xb5, 0x7a, 0x75, 0x2d, 0x4c, 0x53, 0xea, 0x5b, 0xd0,
+	0xb5, 0xac, 0x12, 0x93, 0xaf, 0x81, 0xb8, 0x30, 0x2e, 0xa2, 0xbc, 0x90, 0x0b, 0x9e, 0x71, 0x5d,
+	0x06, 0xed, 0xcd, 0x40, 0x97, 0xfd, 0x4a, 0xfc, 0x5c, 0x83, 0x0c, 0x9d, 0x89, 0xe1, 0x15, 0xbd,
+	0xc3, 0xd2, 0x4e, 0x64, 0x9f, 0xee, 0x59, 0xc7, 0x2b, 0x2c, 0xc3, 0x37, 0xe0, 0x8f, 0x73, 0xf6,
+	0x87, 0xb8, 0xe0, 0x19, 0x0a, 0x65, 0x56, 0xf7, 0x19, 0x74, 0x95, 0x66, 0x85, 0xb6, 0xcc, 0x37,
+	0x86, 0xe7, 0xee, 0xcc, 0x7c, 0x51, 0x24, 0x76, 0x35, 0x9b, 0xf3, 0x45, 0x91, 0x84, 0x5f, 0x80,
+	0x7f, 0x21, 0xd8, 0x6b, 0x14, 0x53, 0x3d, 0xa3, 0x4c, 0x4c, 0xd1, 0x4c, 0x3c, 0xe3, 0xa2, 0x9a,
+	0x87, 0x39, 0x5a, 0x0f, 0x5b, 0x54, 0xfb, 0x35, 0xc7, 0xf0, 0x5f, 0x0f, 0xfc, 0x73, 0x3e, 0x3d,
+	0x67, 0x62, 0x4a, 0xf1, 0xf7, 0x39, 0x2a, 0x4d, 0xbe, 0x83, 0x87, 0xca, 0x10, 0x8c, 0x92, 0x9a,
+	0x61, 0x45, 0xec, 0x51, 0x55, 0xb5, 0x49, 0x9f, 0xfa, 0xaa, 0xd9, 0xce, 0x56, 0x6a, 0xea, 0x99,
+	0xa1, 0x45, 0x2c, 0x93, 0x73, 0xa1, 0xad, 0xaa, 0x3a, 0x14, 0x8c, 0xeb, 0xa5, 0xf5, 0x90, 0x17,
+	0x70, 0x90, 0x08, 0x16, 0xa5, 0xb6, 0x9b, 0xa8, 0x30, 0xed, 0x54, 0xd2, 0xaa, 0x49, 0x34, 0x7b,
+	0xa5, 0x7e, 0xd2, 0xb0, 0xc3, 0x4b, 0x18, 0x8c, 0x53, 0x76, 0x83, 0x14, 0xa7, 0x5c, 0xe9, 0x82,
+	0xd9, 0x37, 0x12, 0xc0, 0x2e, 0x4b, 0x92, 0x02, 0x95, 0xaa, 0xc4, 0x5f, 0x9b, 0xe6, 0x46, 0xcf,
+	0x0a, 0x64, 0x89, 0xb2, 0x74, 0x1f, 0xd0, 0xda, 0x0c, 0x9f, 0xc1, 0xa3, 0xf1, 0x7c, 0xf2, 0x03,
+	0x53, 0x1a, 0x8b, 0xed, 0x92, 0x85, 0xff, 0x79, 0x70, 0xb4, 0x8c, 0xb9, 0x12, 0x5c, 0x73, 0x96,
+	0xf2, 0x5b, 0x17, 0xf5, 0x15, 0x0c, 0x96, 0x62, 0xd4, 0x05, 0x13, 0xea, 0x2d, 0x16, 0x81, 0xb7,
+	0x29, 0xaa, 0x87, 0x95, 0x1a, 0xaf, 0x2b, 0xcc, 0x3d, 0x72, 0x6c, 0x6d, 0x23, 0xc7, 0x6f, 0x20,
+	0xf8, 0xed, 0xe5, 0x82, 0x2b, 0x8a, 0x2a, 0x97, 0x42, 0xf1, 0x09, 0x4f, 0xb9, 0x2e, 0xc7, 0x56,
+	0x72, 0xee, 0x6f, 0x12, 0x2c, 0xee, 0xb9, 0x27, 0x27, 0xd0, 0x9b, 0xcc, 0xe3, 0x77, 0xa8, 0x7f,
+	0xe5, 0x89, 0x9e, 0xd9, 0x1d, 0x74, 0xe9, 0xaa, 0x2b, 0xbc, 0x84, 0xbe, 0xa9, 0xbb, 0x24, 0xfa,
+	0xa1, 0x1d, 0x86, 0xbb, 0xd0, 0xfd, 0x3e, 0xcb, 0x75, 0x39, 0xfc, 0xd3, 0x83, 0xc7, 0x06, 0x72,
+	0x25, 0x34, 0x16, 0xcc, 0xbe, 0xfb, 0x31, 0x16, 0x37, 0x3c, 0x46, 0xf2, 0x0a, 0x8e, 0xaa, 0xf7,
+	0xb9, 0x06, 0x50, 0xe4, 0x68, 0x25, 0xf9, 0xea, 0xcf, 0xe1, 0xf8, 0xbe, 0x0b, 0x72, 0x06, 0xbb,
+	0x95, 0xf4, 0x49, 0xad, 0xaa, 0xe6, 0x53, 0x38, 0x5e, 0x25, 0xfc, 0xb9, 0x37, 0xfc, 0x11, 0x82,
+	0x0d, 0x51, 0xd5, 0xcc, 0x86, 0xb0, 0xe7, 0xdc, 0x58, 0x90, 0xa0, 0x7e, 0x28, 0xeb, 0xe0, 0xe3,
+	0x7e, 0x75, 0xe3, 0x1a, 0x8d, 0xe0, 0xc9, 0x9d, 0xda, 0xaa, 0x73, 0xbe, 0x80, 0x41, 0x9d, 0x73,
+	0x89, 0x23, 0x4f, 0xea, 0xe4, 0x77, 0x45, 0xae, 0x15, 0xf8, 0xa7, 0x05, 0xc7, 0x0e, 0x34, 0x92,
+	0x59, 0x36, 0x17, 0x3c, 0x6e, 0xe4, 0x1f, 0xc1, 0xe1, 0x52, 0x9e, 0xf8, 0xbe, 0xc2, 0xc7, 0xeb,
+	0x15, 0x9a, 0x1a, 0x6e, 0xd6, 0x20, 0x97, 0x10, 0xd6, 0x2b, 0x34, 0x63, 0x52, 0x3f, 0xcd, 0xb5,
+	0xe2, 0x09, 0x36, 0xc5, 0x44, 0x0e, 0x57, 0x26, 0x59, 0xc3, 0xd7, 0x12, 0x7d, 0x0b, 0x8f, 0x7f,
+	0xc9, 0x13, 0xe6, 0x56, 0xdb, 0x10, 0xf0, 0x16, 0xc1, 0x67, 0x30, 0x58, 0xd2, 0x35, 0x7f, 0xfd,
+	0x0b, 0x29, 0x90, 0x34, 0x20, 0x6b, 0x01, 0xcf, 0xe0, 0x70, 0x34, 0xe3, 0xf8, 0x76, 0xfb, 0x90,
+	0xc9, 0x8e, 0x35, 0x9e, 0xff, 0x1f, 0x00, 0x00, 0xff, 0xff, 0x51, 0xcd, 0x38, 0x82, 0xc4, 0x07,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -634,7 +845,7 @@ var _CellInteractionService_serviceDesc = grpc.ServiceDesc{
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type SlaveRegistrationServiceClient interface {
-	Register(ctx context.Context, in *SlaveRegistration, opts ...grpc.CallOption) (*SlaveRegistrationResponse, error)
+	Register(ctx context.Context, in *SlaveRegistration, opts ...grpc.CallOption) (*Empty, error)
 }
 
 type slaveRegistrationServiceClient struct {
@@ -645,8 +856,8 @@ func NewSlaveRegistrationServiceClient(cc *grpc.ClientConn) SlaveRegistrationSer
 	return &slaveRegistrationServiceClient{cc}
 }
 
-func (c *slaveRegistrationServiceClient) Register(ctx context.Context, in *SlaveRegistration, opts ...grpc.CallOption) (*SlaveRegistrationResponse, error) {
-	out := new(SlaveRegistrationResponse)
+func (c *slaveRegistrationServiceClient) Register(ctx context.Context, in *SlaveRegistration, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
 	err := c.cc.Invoke(ctx, "/proto.SlaveRegistrationService/Register", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -656,7 +867,7 @@ func (c *slaveRegistrationServiceClient) Register(ctx context.Context, in *Slave
 
 // SlaveRegistrationServiceServer is the server API for SlaveRegistrationService service.
 type SlaveRegistrationServiceServer interface {
-	Register(context.Context, *SlaveRegistration) (*SlaveRegistrationResponse, error)
+	Register(context.Context, *SlaveRegistration) (*Empty, error)
 }
 
 func RegisterSlaveRegistrationServiceServer(s *grpc.Server, srv SlaveRegistrationServiceServer) {
@@ -694,47 +905,266 @@ var _SlaveRegistrationService_serviceDesc = grpc.ServiceDesc{
 	Metadata: "protocol.proto",
 }
 
-func init() { proto.RegisterFile("protocol.proto", fileDescriptor_protocol_6fd95a7833d73444) }
+// SubMasterRegistrationServiceClient is the client API for SubMasterRegistrationService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type SubMasterRegistrationServiceClient interface {
+	RegisterSubMaster(ctx context.Context, in *SubMasterRegistration, opts ...grpc.CallOption) (*Empty, error)
+}
 
-var fileDescriptor_protocol_6fd95a7833d73444 = []byte{
-	// 609 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x53, 0xcd, 0x6e, 0xd3, 0x4c,
-	0x14, 0x95, 0x93, 0xf4, 0xef, 0xa6, 0xf5, 0x97, 0x8e, 0xf4, 0x51, 0xd3, 0x2e, 0x08, 0x66, 0xd3,
-	0x55, 0x8b, 0x52, 0x58, 0xb0, 0x01, 0xd1, 0x56, 0xa0, 0xaa, 0x5d, 0xa0, 0x49, 0xd5, 0xad, 0x35,
-	0xf5, 0x5c, 0xa5, 0x23, 0x9c, 0x19, 0x33, 0x33, 0x2d, 0x71, 0x1f, 0x84, 0xc7, 0x61, 0xc1, 0x3b,
-	0xf0, 0x3e, 0xe8, 0x8e, 0x6d, 0x48, 0x1a, 0x2a, 0xb1, 0xf2, 0xdc, 0xff, 0x73, 0xee, 0x3d, 0x86,
-	0xb8, 0xb4, 0xc6, 0x9b, 0xdc, 0x14, 0x07, 0xe1, 0xc1, 0x56, 0xc2, 0x27, 0x1d, 0xc1, 0xea, 0x15,
-	0xe6, 0xde, 0x58, 0xb6, 0x09, 0xd1, 0x2c, 0x89, 0x86, 0xd1, 0x7e, 0x87, 0x47, 0x33, 0xb2, 0xaa,
-	0xa4, 0x53, 0x5b, 0x15, 0x59, 0xf7, 0x49, 0xb7, 0xb6, 0xee, 0xd3, 0x43, 0x80, 0x13, 0xa3, 0x35,
-	0xe6, 0x5e, 0x19, 0xcd, 0x9e, 0xc3, 0x66, 0x5e, 0x5b, 0x28, 0x33, 0x6f, 0x42, 0x8b, 0x0d, 0xde,
-	0xff, 0xed, 0xbb, 0x34, 0xe9, 0x8f, 0x08, 0x7a, 0x27, 0x58, 0x14, 0x2c, 0x86, 0x8e, 0x92, 0x4d,
-	0x46, 0x47, 0x49, 0xaa, 0x45, 0x8d, 0x76, 0x52, 0x65, 0x05, 0xde, 0x61, 0x11, 0x06, 0xf6, 0x78,
-	0xbf, 0xf6, 0x5d, 0x90, 0x8b, 0x3d, 0x83, 0x6e, 0x69, 0x5c, 0x18, 0xde, 0x1f, 0x6d, 0xd5, 0xe0,
-	0x0f, 0x6a, 0xc8, 0x9c, 0x22, 0x94, 0x40, 0xa5, 0xbd, 0xbf, 0x26, 0x50, 0x87, 0x01, 0x74, 0xa5,
-	0x16, 0xc9, 0xca, 0x30, 0xda, 0xdf, 0xe4, 0xf4, 0x64, 0x47, 0xd0, 0xc2, 0x53, 0x46, 0xbb, 0x64,
-	0x75, 0xd8, 0xdd, 0xef, 0x8f, 0xb6, 0x9b, 0xd2, 0x3f, 0xd4, 0xf8, 0x7c, 0x56, 0xfa, 0x3d, 0x82,
-	0x01, 0x91, 0x38, 0x31, 0xd3, 0xf2, 0xd6, 0xe3, 0xb1, 0xf0, 0xf9, 0x0d, 0xdb, 0x83, 0x0d, 0xaf,
-	0xa6, 0x98, 0x39, 0x8f, 0x65, 0xe0, 0xd5, 0xe3, 0xeb, 0xe4, 0x18, 0x7b, 0x2c, 0xd9, 0x6b, 0x18,
-	0xe4, 0x58, 0x14, 0x2e, 0xf3, 0x26, 0xcb, 0xeb, 0xaa, 0xa4, 0x13, 0x66, 0xf5, 0xdb, 0x59, 0x58,
-	0x14, 0x3c, 0x0e, 0x49, 0x97, 0xa6, 0x69, 0xcc, 0xde, 0x00, 0xab, 0xcb, 0x94, 0xce, 0x4a, 0x6b,
-	0x66, 0x6a, 0xaa, 0x7c, 0x95, 0x74, 0x97, 0x0b, 0xeb, 0xee, 0x67, 0xfa, 0x53, 0x9b, 0x44, 0x70,
-	0xae, 0x09, 0x57, 0xf6, 0x19, 0xab, 0xb0, 0x91, 0x0d, 0xbe, 0x1e, 0x1c, 0xe7, 0x58, 0xa5, 0x57,
-	0x10, 0x8f, 0x4b, 0xf1, 0x55, 0x9f, 0xaa, 0x29, 0x6a, 0x47, 0xa7, 0x7b, 0x01, 0x2b, 0xce, 0x0b,
-	0xeb, 0x03, 0xf2, 0xa5, 0xe5, 0xd5, 0x31, 0xda, 0x2f, 0x6a, 0x19, 0x4e, 0xb3, 0xbc, 0x5f, 0xd4,
-	0x32, 0x7d, 0x05, 0xf1, 0xa9, 0x16, 0x17, 0xa8, 0x27, 0xfe, 0x86, 0x0b, 0x3d, 0x41, 0xda, 0xf8,
-	0x54, 0xe9, 0x66, 0x1f, 0xf4, 0x0c, 0x1e, 0x31, 0x6b, 0xee, 0x4b, 0xcf, 0xf4, 0x67, 0x04, 0xf1,
-	0xb1, 0x9a, 0x1c, 0x0b, 0x3d, 0xe1, 0xf8, 0xe5, 0x16, 0x9d, 0x67, 0x6f, 0xe1, 0x3f, 0x47, 0x00,
-	0x33, 0xd9, 0x22, 0x6c, 0x80, 0xfd, 0xdf, 0x4c, 0x5d, 0x84, 0xcf, 0x63, 0xb7, 0x48, 0xe7, 0x9f,
-	0xd4, 0xd4, 0xa7, 0xa5, 0x65, 0x62, 0x6a, 0x6e, 0xb5, 0x0f, 0xaa, 0xea, 0x71, 0x20, 0xd7, 0xfb,
-	0xe0, 0x61, 0xef, 0x60, 0x20, 0xb5, 0xc8, 0x8a, 0xc0, 0x26, 0xb3, 0x44, 0xa7, 0x91, 0x56, 0x0b,
-	0x62, 0x91, 0x2b, 0x8f, 0xe5, 0x82, 0x9d, 0x7e, 0x84, 0xed, 0x71, 0x21, 0xee, 0x90, 0xe3, 0x44,
-	0x39, 0x6f, 0x45, 0xf8, 0x47, 0x12, 0x58, 0x13, 0x52, 0x5a, 0x74, 0xae, 0x11, 0x7f, 0x6b, 0x52,
-	0xc4, 0xdf, 0x58, 0x14, 0xd2, 0x05, 0xb8, 0x5b, 0xbc, 0x35, 0xd3, 0x3d, 0x78, 0xba, 0xd4, 0x88,
-	0xa3, 0x2b, 0x8d, 0x76, 0x38, 0xfa, 0x16, 0xc1, 0x13, 0xd2, 0xc0, 0x99, 0xf6, 0x68, 0x45, 0x50,
-	0xe8, 0x18, 0xed, 0x9d, 0xca, 0x91, 0x9d, 0xc3, 0x4e, 0xa3, 0xa4, 0x07, 0x09, 0x8e, 0xed, 0xcc,
-	0xa9, 0x67, 0x5e, 0xc6, 0xbb, 0x8f, 0x05, 0xd8, 0x21, 0xac, 0x35, 0x47, 0x62, 0x2d, 0xff, 0xc5,
-	0xa3, 0xed, 0xce, 0x2b, 0xf2, 0x65, 0x34, 0xba, 0x86, 0x64, 0x09, 0x75, 0x8b, 0xec, 0x03, 0xac,
-	0xd7, 0x6e, 0xb4, 0x2c, 0x69, 0x4f, 0xfa, 0x30, 0x79, 0x77, 0xf8, 0x58, 0xa4, 0x25, 0x7f, 0xbd,
-	0x1a, 0x12, 0x8e, 0x7e, 0x05, 0x00, 0x00, 0xff, 0xff, 0xc3, 0xdc, 0xc1, 0x86, 0xd3, 0x04, 0x00,
-	0x00,
+type subMasterRegistrationServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewSubMasterRegistrationServiceClient(cc *grpc.ClientConn) SubMasterRegistrationServiceClient {
+	return &subMasterRegistrationServiceClient{cc}
+}
+
+func (c *subMasterRegistrationServiceClient) RegisterSubMaster(ctx context.Context, in *SubMasterRegistration, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/proto.SubMasterRegistrationService/RegisterSubMaster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// SubMasterRegistrationServiceServer is the server API for SubMasterRegistrationService service.
+type SubMasterRegistrationServiceServer interface {
+	RegisterSubMaster(context.Context, *SubMasterRegistration) (*Empty, error)
+}
+
+func RegisterSubMasterRegistrationServiceServer(s *grpc.Server, srv SubMasterRegistrationServiceServer) {
+	s.RegisterService(&_SubMasterRegistrationService_serviceDesc, srv)
+}
+
+func _SubMasterRegistrationService_RegisterSubMaster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubMasterRegistration)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SubMasterRegistrationServiceServer).RegisterSubMaster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.SubMasterRegistrationService/RegisterSubMaster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SubMasterRegistrationServiceServer).RegisterSubMaster(ctx, req.(*SubMasterRegistration))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _SubMasterRegistrationService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "proto.SubMasterRegistrationService",
+	HandlerType: (*SubMasterRegistrationServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "RegisterSubMaster",
+			Handler:    _SubMasterRegistrationService_RegisterSubMaster_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "protocol.proto",
+}
+
+// MasterCommunicationServiceClient is the client API for MasterCommunicationService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type MasterCommunicationServiceClient interface {
+	InitializeSubMaster(ctx context.Context, in *SubMasterInitialization, opts ...grpc.CallOption) (*Empty, error)
+	TransferCellsOutsideResponsibility(ctx context.Context, in *CellTransfer, opts ...grpc.CallOption) (*Empty, error)
+	UpdateCellsInProximity(ctx context.Context, in *CellTransfer, opts ...grpc.CallOption) (*Empty, error)
+	// rpc ShutDownSubMaster (Empty) returns (Empty);
+	// rpc UnregisterSubMaster (CellTransfer) returns (Empty);
+	SubMasterStepDone(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Empty, error)
+	ChiefMasterStepDone(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Empty, error)
+}
+
+type masterCommunicationServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewMasterCommunicationServiceClient(cc *grpc.ClientConn) MasterCommunicationServiceClient {
+	return &masterCommunicationServiceClient{cc}
+}
+
+func (c *masterCommunicationServiceClient) InitializeSubMaster(ctx context.Context, in *SubMasterInitialization, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/proto.MasterCommunicationService/InitializeSubMaster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *masterCommunicationServiceClient) TransferCellsOutsideResponsibility(ctx context.Context, in *CellTransfer, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/proto.MasterCommunicationService/TransferCellsOutsideResponsibility", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *masterCommunicationServiceClient) UpdateCellsInProximity(ctx context.Context, in *CellTransfer, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/proto.MasterCommunicationService/UpdateCellsInProximity", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *masterCommunicationServiceClient) SubMasterStepDone(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/proto.MasterCommunicationService/SubMasterStepDone", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *masterCommunicationServiceClient) ChiefMasterStepDone(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/proto.MasterCommunicationService/ChiefMasterStepDone", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// MasterCommunicationServiceServer is the server API for MasterCommunicationService service.
+type MasterCommunicationServiceServer interface {
+	InitializeSubMaster(context.Context, *SubMasterInitialization) (*Empty, error)
+	TransferCellsOutsideResponsibility(context.Context, *CellTransfer) (*Empty, error)
+	UpdateCellsInProximity(context.Context, *CellTransfer) (*Empty, error)
+	// rpc ShutDownSubMaster (Empty) returns (Empty);
+	// rpc UnregisterSubMaster (CellTransfer) returns (Empty);
+	SubMasterStepDone(context.Context, *Empty) (*Empty, error)
+	ChiefMasterStepDone(context.Context, *Empty) (*Empty, error)
+}
+
+func RegisterMasterCommunicationServiceServer(s *grpc.Server, srv MasterCommunicationServiceServer) {
+	s.RegisterService(&_MasterCommunicationService_serviceDesc, srv)
+}
+
+func _MasterCommunicationService_InitializeSubMaster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubMasterInitialization)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterCommunicationServiceServer).InitializeSubMaster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.MasterCommunicationService/InitializeSubMaster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterCommunicationServiceServer).InitializeSubMaster(ctx, req.(*SubMasterInitialization))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MasterCommunicationService_TransferCellsOutsideResponsibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CellTransfer)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterCommunicationServiceServer).TransferCellsOutsideResponsibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.MasterCommunicationService/TransferCellsOutsideResponsibility",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterCommunicationServiceServer).TransferCellsOutsideResponsibility(ctx, req.(*CellTransfer))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MasterCommunicationService_UpdateCellsInProximity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CellTransfer)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterCommunicationServiceServer).UpdateCellsInProximity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.MasterCommunicationService/UpdateCellsInProximity",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterCommunicationServiceServer).UpdateCellsInProximity(ctx, req.(*CellTransfer))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MasterCommunicationService_SubMasterStepDone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterCommunicationServiceServer).SubMasterStepDone(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.MasterCommunicationService/SubMasterStepDone",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterCommunicationServiceServer).SubMasterStepDone(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MasterCommunicationService_ChiefMasterStepDone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterCommunicationServiceServer).ChiefMasterStepDone(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.MasterCommunicationService/ChiefMasterStepDone",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterCommunicationServiceServer).ChiefMasterStepDone(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _MasterCommunicationService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "proto.MasterCommunicationService",
+	HandlerType: (*MasterCommunicationServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "InitializeSubMaster",
+			Handler:    _MasterCommunicationService_InitializeSubMaster_Handler,
+		},
+		{
+			MethodName: "TransferCellsOutsideResponsibility",
+			Handler:    _MasterCommunicationService_TransferCellsOutsideResponsibility_Handler,
+		},
+		{
+			MethodName: "UpdateCellsInProximity",
+			Handler:    _MasterCommunicationService_UpdateCellsInProximity_Handler,
+		},
+		{
+			MethodName: "SubMasterStepDone",
+			Handler:    _MasterCommunicationService_SubMasterStepDone_Handler,
+		},
+		{
+			MethodName: "ChiefMasterStepDone",
+			Handler:    _MasterCommunicationService_ChiefMasterStepDone_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "protocol.proto",
 }

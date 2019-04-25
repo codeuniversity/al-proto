@@ -3,60 +3,90 @@ syntax = "proto3";
 package proto;
 
 message Vector {
-  float x = 1;
-  float y = 2;
-  float z = 3;
+    float x = 1;
+    float y = 2;
+    float z = 3;
 }
 
 message Connection {
-  string connected_to = 1;
+    string connected_to = 1;
 }
 
 message Cell {
-  string id = 1;
-  uint64 energy_level = 2;
-  Vector pos = 3;
-  Vector vel = 4;
-  bytes dna = 5;
-  repeated Connection connections = 6;
+    string id = 1;
+    uint64 energy_level = 2;
+    Vector pos = 3;
+    Vector vel = 4;
+    bytes dna = 5;
+    repeated Connection connections = 6;
 }
 
 message CellComputeBatch {
-  uint64 time_step = 1;
-  repeated Cell cells_to_compute = 2;
-  repeated Cell cells_in_proximity = 3;
-  string batch_key = 4;
+    uint64 time_step = 1;
+    repeated Cell cells_to_compute = 2;
+    repeated Cell cells_in_proximity = 3;
+    string batch_key = 4;
 }
 
 message SpawnDimension {
-  Vector start = 1;
-  Vector end = 2;
+    Vector start = 1;
+    Vector end = 2;
 }
 
 message DnaLengthRange {
-  uint64 min = 1;
-  uint64 max = 2;
+    uint64 min = 1;
+    uint64 max = 2;
 }
 
 message BigBangRequest {
-  SpawnDimension spawn_dimension = 1;
-  uint64 energy_level = 2;
-  uint64 cell_amount = 3;
-  DnaLengthRange dna_length_range = 4;
+    SpawnDimension spawn_dimension = 1;
+    uint64 energy_level = 2;
+    uint64 cell_amount = 3;
+    DnaLengthRange dna_length_range = 4;
 }
 
 service CellInteractionService {
-  rpc ComputeCellInteractions(CellComputeBatch) returns (CellComputeBatch);
-  rpc BigBang(BigBangRequest) returns (stream Cell);
+    rpc ComputeCellInteractions (CellComputeBatch) returns (CellComputeBatch);
+    rpc BigBang (BigBangRequest) returns (stream Cell);
 }
 
 message SlaveRegistration {
-  string address = 1;
-  uint32 threads = 2;
+    string address = 1;
+    uint32 threads = 2;
 }
 
-message SlaveRegistrationResponse {}
-
 service SlaveRegistrationService {
-  rpc Register(SlaveRegistration) returns (SlaveRegistrationResponse);
+    rpc Register (SlaveRegistration) returns (Empty);
+}
+
+service SubMasterRegistrationService {
+    rpc RegisterSubMaster (SubMasterRegistration) returns (Empty);
+}
+
+message SubMasterRegistration {
+    string address = 1;
+}
+
+service MasterCommunicationService {
+    rpc InitializeSubMaster (SubMasterInitialization) returns (Empty);
+    rpc TransferCellsOutsideResponsibility (CellTransfer) returns (Empty);
+    rpc UpdateCellsInProximity (CellTransfer) returns (Empty);
+   // rpc ShutDownSubMaster (Empty) returns (Empty);
+   // rpc UnregisterSubMaster (CellTransfer) returns (Empty);
+    rpc SubMasterStepDone (Empty) returns (Empty);
+    rpc ChiefMasterStepDone (Empty) returns (Empty);
+}
+
+message SubMasterInitialization {
+    repeated Cell cells_to_transfer = 1;
+    repeated Cell cells_in_proximity = 2;
+    float XAxisResponsibilityStart = 3;
+    int32 bucketWidth = 4;
+}
+
+message CellTransfer {
+    repeated Cell cells_to_transfer = 1;
+}
+
+message Empty {
 }
